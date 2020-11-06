@@ -1,1 +1,40 @@
-<p>cart works!</p>
+<div class="white-container">
+    <div class="top-nav-wrapper">
+        <app-top-nav></app-top-nav>
+    </div>
+    <div class="cart-content-wrapper">
+        <div class="prod-list-wrapper col-lg-6">
+            <div class="prod-list-header">
+                <div class="header">
+                    <h1>Your Cart</h1>
+                    <div class="secondary-header">
+                        <p>List of products in your cart</p>
+                    </div>
+                </div>
+                <div class="filter-container">
+                    <div class="filter-wrapper">
+                        <div class="filter">
+                            <fa-icon [icon]="['fas','sort-amount-down-alt']"></fa-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="prod-card-wrapper">
+                <app-item-card></app-item-card>
+            </div>
+        </div>
+        <div class="price-list-wrapper col-lg-6">
+            <div class="price-list-header">
+                <div class="header">
+                    <h1>Order Pricing</h1>
+                    <div class="secondary-header">
+                        <p>Pricing of products you order</p>
+                    </div>
+                </div>
+            </div>
+            <div class="price-card-wrapper">
+                <app-pricing></app-pricing>
+            </div>
+        </div>
+    </div>
+</div>

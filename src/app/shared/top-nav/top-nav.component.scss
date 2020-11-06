@@ -20,6 +20,10 @@
 
 .user-cart {
   .cart {
+    &:hover{
+      cursor: pointer;
+      color: aqua;
+    }
     font-size: 29px;
     color: #413382;
     padding-left: 70px;
