@@ -1,1 +1,20 @@
-<p>top-nav works!</p>
+<div class="top-nav">
+    <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#">
+            <img class="brand-img" src="../../../assets/logo.png" alt="org logo">
+        </a>
+        <div class="collapse navbar-collapse nav-bar" id="navbarSupportedContent">
+            <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            </form>
+            <div class="user-cart">
+                <div class="cart">
+                    <fa-icon [icon]="['fas', 'shopping-bag']"></fa-icon>
+                </div>
+            </div>
+            <div class="user-profile">
+                <div class="profile-img"></div>
+            </div>
+        </div>
+    </nav>
+</div>
