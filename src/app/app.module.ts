@@ -11,7 +11,7 @@ import { PricingCardComponent } from './public/dashboard/pricing-card/pricing-ca
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faShoppingBag, faSortAmountDownAlt } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faShoppingBag, faSortAmountDownAlt } from '@fortawesome/free-solid-svg-icons';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +33,6 @@ import { faShoppingBag, faSortAmountDownAlt } from '@fortawesome/free-solid-svg-
 })
 export class AppModule {
   constructor(private library: FaIconLibrary) {
-    library.addIcons(faShoppingBag, faSortAmountDownAlt);
+    library.addIcons(faShoppingBag, faSortAmountDownAlt,faPlus);
   }
 }
