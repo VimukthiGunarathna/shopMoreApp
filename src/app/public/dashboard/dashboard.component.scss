@@ -20,54 +20,13 @@
   display: flex;
 }
 
-.prod-list-header-wrapper {
-  display: flex;
+.prod-list-wrapper {
   margin: 0px 25px 0px 25px;
-
-  .prod-list-header {
-    display: flex;
-
-    .header {
-      h1 {
-        font-size: 80px;
-        color: #473889;
-      }
-
-      .secondary-header {
-        padding-top: 1.5em;
-        padding-top: 1.5em;
-
-        p {
-          font-size: 29px;
-          color: #473889;
-        }
-      }
-    }
-
-    .filter-container {
-      padding-left: 13em;
-
-      .filter-wrapper {
-        border-radius: 50%;
-        width: 5em;
-        height: 5em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        box-shadow: 0px 2px 5px 5px rgba(50, 50, 50, 0.23);
-
-        .filter {
-          font-size: 35px;
-        }
-      }
-    }
-  }
-
 }
 
 
-.price-list-wrapper {
-  margin: 0px 25px 0px 25px;
+.prod-list-header {
+  display: flex;
 
   .header {
     h1 {
@@ -77,6 +36,7 @@
 
     .secondary-header {
       padding-top: 1.5em;
+      padding-top: 1.5em;
 
       p {
         font-size: 29px;
@@ -84,4 +44,51 @@
       }
     }
   }
+
+  .filter-container {
+    padding-left: 13em;
+
+    .filter-wrapper {
+      border-radius: 50%;
+      width: 5em;
+      height: 5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0px 2px 5px 5px rgba(50, 50, 50, 0.23);
+
+      .filter {
+        font-size: 35px;
+      }
+    }
+  }
 }
+
+
+
+
+.price-list-wrapper {
+  margin: 0px 25px 0px 25px;
+
+  .price-list-header {
+    .header {
+      h1 {
+        font-size: 80px;
+        color: #473889;
+      }
+
+      .secondary-header {
+        padding-top: 1.5em;
+
+        p {
+          font-size: 29px;
+          color: #473889;
+        }
+      }
+    }
+  }
+}
+
+.prod-card-wrapper {}
+
+.price-card-wrapper {}
