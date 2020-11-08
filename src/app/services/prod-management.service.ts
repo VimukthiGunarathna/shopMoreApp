@@ -18,4 +18,8 @@ export class ProdManagementService {
   public getAllProducts(): Observable<any> {
     return this.http.get(`${this.url}` + 'all-products');
   }
+
+  public getProductPricings(): Observable<any> {
+    return this.http.get(`${this.url}` + 'prod-pricing');
+  }
 }

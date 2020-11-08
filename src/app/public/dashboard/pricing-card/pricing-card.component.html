@@ -11,19 +11,12 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th class="tr-cols" scope="row">1</th>
-                    <td class="tr-cols">Mark</td>
-                    <td class="tr-cols">Otto</td>
-                    <td class="tr-cols">@mdo</td>
-                    <td class="tr-cols">@fat</td>
-                </tr>
-                <tr>
-                    <th class="tr-cols" scope="row">2</th>
-                    <td class="tr-cols">Jacob</td>
-                    <td class="tr-cols">Thornton</td>
-                    <td class="tr-cols">@fat</td>
-                    <td class="tr-cols">@fat</td>
+                <tr *ngFor="let item of productsPrices">
+                    <th class="tr-cols" scope="row">{{item.prod_name}}</th>
+                    <td class="tr-cols">{{item.carton_price}}</td>
+                    <td class="tr-cols">{{item.unit_price}}</td>
+                    <td class="tr-cols">{{item.units_25}}</td>
+                    <td class="tr-cols">{{item.units_50}}</td>
                 </tr>
             </tbody>
         </table>

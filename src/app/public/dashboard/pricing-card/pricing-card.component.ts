@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
+import { ProdManagementService } from 'src/app/services/prod-management.service';
 
+// Deault data import
+import { prod_pricing_list } from '../../../shared/seed';
 @Component({
   selector: 'app-pricing-card',
   templateUrl: './pricing-card.component.html',
@@ -7,9 +11,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PricingCardComponent implements OnInit {
 
-  constructor() { }
+  //public productsPrices: any;
+  public productsPrices = prod_pricing_list; // which holds all the products
+
+  constructor(
+    private prodManagementService: ProdManagementService,
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
+
+    // Get all the availabe products pricing    
+    this.prodManagementService.getAllProducts().subscribe(data => {
+      // this.productsPrices = data;
+    });
+    console.log(this.productsPrices);
+    this.productsPrices.forEach(element => {
+      console.log(element.carton_price);
+      
+    });
+    
   }
 
 }
