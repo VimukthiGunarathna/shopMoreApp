@@ -27,7 +27,11 @@ export class PricingComponent implements OnInit {
     });
   }
 
-  incrementOperation(type) {
+  /**
+   * Adding units or cartons to order
+   * @param type : type of the increment (Units /Cartons)
+   */
+  public incrementOperation(type) {
     if (type == "carton") {
       if (this.qty_cartons >= 0) {
         this.qty_cartons++;
@@ -38,7 +42,12 @@ export class PricingComponent implements OnInit {
       }
     }
   }
-  decrementOperation(type) {
+
+  /**
+   * Reducing units or cartons to order
+   * @param type : type of the decrement (Units /Cartons)
+   */
+  public decrementOperation(type) {
     if (type == "carton") {
       if (this.qty_cartons > 0) {
         this.qty_cartons--;
@@ -48,6 +57,10 @@ export class PricingComponent implements OnInit {
         this.qty_units--;
       }
     }
+  }
+
+  public getPricing(item){
+
   }
 
 }

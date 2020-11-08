@@ -15,7 +15,7 @@ export class CartService {
   cartList = this.cartListSource.asObservable();
   constructor() { }
 
-  addProductsToCart(items) {
+  public addProductsToCart(items) {
     this.cartListSource.next(items);
   }
 

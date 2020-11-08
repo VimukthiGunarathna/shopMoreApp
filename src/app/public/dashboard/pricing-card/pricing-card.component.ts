@@ -25,12 +25,6 @@ export class PricingCardComponent implements OnInit {
     this.prodManagementService.getAllProducts().subscribe(data => {
       // this.productsPrices = data;
     });
-    console.log(this.productsPrices);
-    this.productsPrices.forEach(element => {
-      console.log(element.carton_price);
-      
-    });
-    
   }
 
 }
