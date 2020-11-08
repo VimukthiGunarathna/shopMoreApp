@@ -12,7 +12,8 @@ import { prod_pricing_list } from '../../../shared/seed';
 export class PricingCardComponent implements OnInit {
 
   //public productsPrices: any;
-  public productsPrices = prod_pricing_list; // which holds all the products
+  public productsPrices;  
+  // = prod_pricing_list; // which holds all the products
 
   constructor(
     private prodManagementService: ProdManagementService,
@@ -22,8 +23,8 @@ export class PricingCardComponent implements OnInit {
   ngOnInit(): void {
 
     // Get all the availabe products pricing    
-    this.prodManagementService.getAllProducts().subscribe(data => {
-      // this.productsPrices = data;
+    this.prodManagementService.getAllProductPricing().subscribe(data => {
+      this.productsPrices = data;
     });
   }
 

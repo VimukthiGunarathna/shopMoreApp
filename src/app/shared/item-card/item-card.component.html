@@ -17,7 +17,7 @@
                         </div>
                         <div class="price-cart-wrapper">
                             <div class="price">
-                                <p>{{item.carton_price}}</p>
+                                <p>${{item.carton_price}}.00</p>
                             </div>
                             <div class="addtocart-wrapper" *ngIf="!isCart" (click)="addToCart(item)">
                                 <div class="add-to-cart">
@@ -48,7 +48,7 @@
                         </div>
                         <div class="price-cart-wrapper">
                             <div class="price">
-                                <p>{{item.carton_price}}</p>
+                                <p>${{item.carton_price}}.00</p>
                             </div>
                             <div class="addtocart-wrapper" *ngIf="!isCart" (click)="addToCart(item)">
                                 <div class="add-to-cart">

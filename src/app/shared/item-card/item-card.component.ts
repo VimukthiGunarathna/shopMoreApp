@@ -13,7 +13,7 @@ import { prod_list } from '../seed';
 export class ItemCardComponent implements OnInit {
 
   @Input() type;
-  public products = prod_list; // which holds all the products
+  public products = []; // which holds all the products
   public cartList = [];
   public addToCartList = [];
   public isCart = false;
@@ -36,7 +36,23 @@ export class ItemCardComponent implements OnInit {
 
     // Get all the availabe products
     this.prodManagementService.getAllProducts().subscribe(data => {
-      this.products = data;
+      const products_temp = data;
+      this.prodManagementService.getAllCartonPrice().subscribe(data => {
+        const cartons_temp = data;
+        products_temp.forEach(x => {
+          cartons_temp.forEach(y => {
+            if (x.prod_id == y.carton_id) {
+              let item = {
+                prod_id: x.prod_id,
+                prod_name: x.prod_name,
+                prod_desc: x.prod_desc,
+                carton_price: y.carton_price
+              }
+              this.products.push(item);
+            }
+          });
+        });
+      });
     });
   }
 
@@ -50,9 +66,9 @@ export class ItemCardComponent implements OnInit {
       prod_name: item.prod_name,
       prod_desc: item.prod_desc,
       carton_price: item.carton_price,
-      unit_price: item.unit_price,
       qty_cartons: 0,
-      qty_units: 0
+      qty_units: 0,
+      total:''
     }
     this.addToCartList.push(newItem);
     this.cartService.addProductsToCart(this.addToCartList);

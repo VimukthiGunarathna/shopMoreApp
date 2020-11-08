@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { error } from 'console';
 import { CartService } from 'src/app/services/cart.service';
 import { OrderService } from 'src/app/services/order.service';
 import { ProdManagementService } from 'src/app/services/prod-management.service';
@@ -65,14 +64,13 @@ export class PricingComponent implements OnInit {
   }
 
   public getPricing(item) {
-    this.prodManagementService.getProductPricings().subscribe(res => {
-      this.productTotal = res;
-      this.displayTotal(this.productTotal)
-      this.isProdTotalAvailable = true;
-    }, error => {
-      this.productTotal = 17800;
-      this.isProdTotalAvailable = true;
-      this.displayTotal(this.productTotal)
+    let new_item = {
+      prod_id: item.prod_id,
+      qty_cartons: item.qty_cartons,
+      qty_units: item.qty_units
+    }
+    this.prodManagementService.getProductPricing(item).subscribe(res => {
+      item.total = 'Sub total is : ' + res;
     });
   }
 
@@ -89,9 +87,6 @@ export class PricingComponent implements OnInit {
     this.orderService.orderProducts(order).subscribe(res => {
       this.orderTotal = res.order_total;
     });
-  }
-  private displayTotal(item_price) {
-    this.orderTotal = this.orderTotal + item_price;
   }
 
 }

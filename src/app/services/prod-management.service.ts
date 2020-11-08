@@ -11,15 +11,22 @@ export class ProdManagementService {
     'Content-Type': 'application/json; charset=utf-8',
     'Access-Control-Allow-Origin': '*'
   });
-  public url = 'http://localhost:8080';
+  public url = 'http://localhost:8080/';
 
   constructor(private http: HttpClient) { }
 
   public getAllProducts(): Observable<any> {
-    return this.http.get(`${this.url}` + 'all-products');
+    return this.http.get(`${this.url}/getAllProducts`, { headers: this.headers });
   }
 
-  public getProductPricings(): Observable<any> {
-    return this.http.get(`${this.url}` + 'prod-pricing');
+  public getAllCartonPrice(): Observable<any> {
+    return this.http.get(`${this.url}getAllCartonPrice/`, { headers: this.headers })
+  }
+
+  public getAllProductPricing(): Observable<any> {
+    return this.http.get(`${this.url}getAllPricing`, { headers: this.headers });
+  }
+  public getProductPricing(item): Observable<any> {
+    return this.http.post(`${this.url}getPricing`,item, { headers: this.headers });
   }
 }

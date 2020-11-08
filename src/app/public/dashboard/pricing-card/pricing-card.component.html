@@ -13,10 +13,12 @@
             <tbody>
                 <tr *ngFor="let item of productsPrices">
                     <th class="tr-cols" scope="row">{{item.prod_name}}</th>
-                    <td class="tr-cols">{{item.carton_price}}</td>
-                    <td class="tr-cols">{{item.unit_price}}</td>
-                    <td class="tr-cols">{{item.units_25}}</td>
-                    <td class="tr-cols">{{item.units_50}}</td>
+                    <td class="tr-cols">${{item.carton_price}}
+                        ({{item.units}} units)
+                    </td>
+                    <td class="tr-cols">${{item.unit_price}}</td>
+                    <td class="tr-cols">${{item.units_25}}</td>
+                    <td class="tr-cols">${{item.units_50}}</td>
                 </tr>
             </tbody>
         </table>
