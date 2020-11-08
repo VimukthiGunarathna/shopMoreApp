@@ -75,3 +75,13 @@
 .prod-card-wrapper {
   display: flex;
 }
+
+.no-item-card {
+  padding: 10em;
+  font-size: 19px;
+  font-style: italic;
+  font-weight: 100;
+  border: 1px solid #d2c8c8;
+  border-radius: 10px;
+  margin: 16px;
+}

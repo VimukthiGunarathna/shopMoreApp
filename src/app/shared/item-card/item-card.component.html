@@ -61,4 +61,9 @@
             </div>
         </div>
     </ng-template>
+    <div *ngIf="isCartEmpty && isCart" class="no-item-card">
+        <p>
+            There's no items in your cart
+        </p>
+    </div>
 </div>

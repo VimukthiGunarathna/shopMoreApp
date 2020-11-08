@@ -7,7 +7,6 @@ import { AppComponent } from './app.component';
 import { TopNavComponent } from './shared/top-nav/top-nav.component';
 import { DashboardComponent } from './public/dashboard/dashboard.component';
 import { CartComponent } from './public/cart/cart.component';
-import { ItemCardComponent } from './public/dashboard/item-card/item-card.component';
 import { PricingCardComponent } from './public/dashboard/pricing-card/pricing-card.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatFormFieldModule } from '@angular/material/form-field'
@@ -16,6 +15,7 @@ import { faMinus, faPlus, faShoppingBag, faSortAmountDownAlt } from '@fortawesom
 import { PricingComponent } from './public/cart/pricing/pricing.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import {MatIconModule} from '@angular/material/icon';
+import { ItemCardComponent } from './shared/item-card/item-card.component';
 @NgModule({
   declarations: [
     AppComponent,

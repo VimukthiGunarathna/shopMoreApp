@@ -17,6 +17,7 @@ export class ItemCardComponent implements OnInit {
   public cartList = [];
   public addToCartList = [];
   public isCart = false;
+  public isCartEmpty = true;
 
   constructor(
     private prodManagementService: ProdManagementService,
@@ -29,7 +30,9 @@ export class ItemCardComponent implements OnInit {
     }
 
     this.cartService.cartList.subscribe(data => {
+      console.log(data.length);
       this.addToCartList = data;
+      this.isCartEmpty = false
     });
 
     // Get all the availabe products

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-pricing',
@@ -11,10 +12,19 @@ export class PricingComponent implements OnInit {
   public qty_units = 0;
   public qty_cartons = 0;
   public products;
+  public isCartEmpty = true;
+  public cartList = [];
 
-  constructor() { }
+  constructor(
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
+
+    this.cartService.cartList.subscribe(data => {
+      this.cartList = data;
+      this.isCartEmpty = false;
+    });
   }
 
   incrementOperation(type) {
