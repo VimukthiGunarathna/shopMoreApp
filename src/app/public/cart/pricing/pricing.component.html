@@ -60,12 +60,11 @@
         </div>
         <div class="total-wrapper">
             <div class="total">
-                <p>Total Pricing : $900.00</p>
+                <p>Total Pricing : ${{orderTotal}}</p>
             </div>
-            <div class="order-btn">
+            <div class="order-btn" (click)="orderProducts()">
                 <p>Order</p>
             </div>
-
         </div>
     </div>
 </div>

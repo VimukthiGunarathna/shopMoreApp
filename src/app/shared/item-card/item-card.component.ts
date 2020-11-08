@@ -46,6 +46,7 @@ export class ItemCardComponent implements OnInit {
    */
   public addToCart(item) {
     let newItem = {
+      prod_id: item.prod_id,
       prod_name: item.prod_name,
       prod_desc: item.prod_desc,
       carton_price: item.carton_price,

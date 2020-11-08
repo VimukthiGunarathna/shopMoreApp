@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { error } from 'console';
 import { CartService } from 'src/app/services/cart.service';
+import { OrderService } from 'src/app/services/order.service';
 import { ProdManagementService } from 'src/app/services/prod-management.service';
 
 @Component({
@@ -12,13 +13,15 @@ export class PricingComponent implements OnInit {
 
 
   public productTotal;
+  public orderTotal = 0.00;
   public isCartEmpty = true;
   public cartList = [];
   public isProdTotalAvailable = false;
 
   constructor(
     private cartService: CartService,
-    private prodManagementService: ProdManagementService
+    private prodManagementService: ProdManagementService,
+    private orderService: OrderService
   ) { }
 
   ngOnInit(): void {
@@ -64,12 +67,31 @@ export class PricingComponent implements OnInit {
   public getPricing(item) {
     this.prodManagementService.getProductPricings().subscribe(res => {
       this.productTotal = res;
+      this.displayTotal(this.productTotal)
       this.isProdTotalAvailable = true;
-    },error =>{
-      console.log(error,'hey');
+    }, error => {
       this.productTotal = 17800;
       this.isProdTotalAvailable = true;
+      this.displayTotal(this.productTotal)
     });
+  }
+
+  public orderProducts() {
+    const order = [];
+    this.cartList.forEach(x => {
+      let newOrderItem = {
+        prod_id: x.prod_id,
+        qty_cartons: x.qty_cartons,
+        qty_units: x.qty_units
+      }
+      order.push(newOrderItem);
+    });
+    this.orderService.orderProducts(order).subscribe(res => {
+      this.orderTotal = res.order_total;
+    });
+  }
+  private displayTotal(item_price) {
+    this.orderTotal = this.orderTotal + item_price;
   }
 
 }
