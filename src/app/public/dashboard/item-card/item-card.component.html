@@ -1,5 +1,5 @@
 <div class="prod-card-wrapper">
-    <div class="item-card col-lg-6">
+    <div class="item-card col-lg-6" *ngFor="let item of products">
         <div class="card-img">
             <img src="../../../../assets/penguinears.png" alt=" penguinears">
         </div>
@@ -8,47 +8,17 @@
                 <div class="desc-header">
                     <div class="header">
                         <h1>
-                            Penguin Ears
+                            {{item.prod_name}}
                         </h1>
                         <div class="secondary-header">
-                            <p>item-card works!</p>
+                            <p>{{item.prod_desc}}</p>
                         </div>
                     </div>
                     <div class="price-cart-wrapper">
                         <div class="price">
-                            <p>$175.00</p>
+                            <p>{{item.carton_price}}</p>
                         </div>
                         <div class="addtocart-wrapper">
-                            <div class="add-to-cart">
-                                <fa-icon [icon]="['fas','plus']"></fa-icon>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </div>
-    <div class="item-card col-lg-6">
-        <div class="card-img">
-            <img src="../../../../assets/penguinears.png" alt=" penguinears">
-        </div>
-        <div class="card-desc-wrapper">
-            <div class="card-desc">
-                <div class="desc-header">
-                    <div class="header">
-                        <h1>
-                            Penguin Ears
-                        </h1>
-                        <div class="secondary-header">
-                            <p>item-card works!</p>
-                        </div>
-                    </div>
-                    <div class="price-cart-wrapper">
-                        <div class="price">
-                            <p>$175.00</p>
-                        </div>
-                        <div class="addtocart-wrapper" (click)="addToCart('HEY')">
                             <div class="add-to-cart">
                                 <fa-icon [icon]="['fas','plus']"></fa-icon>
                             </div>
