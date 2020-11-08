@@ -20,7 +20,7 @@ export class PricingComponent implements OnInit {
   constructor(
     private cartService: CartService,
     private prodManagementService: ProdManagementService,
-    private orderService: OrderService
+    private orderService: OrderService,
   ) { }
 
   ngOnInit(): void {
@@ -70,7 +70,8 @@ export class PricingComponent implements OnInit {
       qty_units: item.qty_units
     }
     this.prodManagementService.getProductPricing(item).subscribe(res => {
-      item.total = 'Sub total is : ' + res;
+      item.total = res;
+      this.dispplayTotal(res);
     });
   }
 
@@ -87,6 +88,10 @@ export class PricingComponent implements OnInit {
     this.orderService.orderProducts(order).subscribe(res => {
       this.orderTotal = res.order_total;
     });
+  }
+
+  private dispplayTotal(subtotal){
+    this.orderTotal = this.orderTotal + subtotal;
   }
 
 }

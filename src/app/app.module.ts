@@ -14,9 +14,8 @@ import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontaweso
 import { faMinus, faPlus, faShoppingBag, faSortAmountDownAlt } from '@fortawesome/free-solid-svg-icons';
 import { PricingComponent } from './public/cart/pricing/pricing.component';
 import { MatBadgeModule } from '@angular/material/badge';
-import { MatIconModule } from '@angular/material/icon';
+import {MatIconModule} from '@angular/material/icon';
 import { ItemCardComponent } from './shared/item-card/item-card.component';
-import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,8 +34,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatFormFieldModule,
     FontAwesomeModule,
     MatBadgeModule,
-    MatIconModule,
-    MatDialogModule
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
