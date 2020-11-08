@@ -10,7 +10,7 @@
                 <div class="item-name">
                     <p>{{item.prod_name}}</p>
                 </div>
-                <div class="pricing-btn">
+                <div class="pricing-btn" (click)="getPricing(item)">
                     Get pricing
                 </div>
             </div>
@@ -19,15 +19,15 @@
                     <p>Qty by Units</p>
                 </div>
                 <div class="pricing-units">
-                    <div class="decrement-wrapper" (click)="decrementOperation('unit')">
+                    <div class="decrement-wrapper" (click)="decrementOperation(item,'unit')">
                         <div class="decrement-btn">
                             <fa-icon [icon]="['fas','minus']"></fa-icon>
                         </div>
                     </div>
                     <div class="units">
-                        <p>{{qty_units}}</p>
+                        <p>{{item.qty_units}}</p>
                     </div>
-                    <div class="increment-wrapper" (click)="incrementOperation('unit')">
+                    <div class="increment-wrapper" (click)="incrementOperation(item,'unit')">
                         <div class="increment-btn">
                             <fa-icon [icon]="['fas','plus']"></fa-icon>
                         </div>
@@ -39,20 +39,23 @@
                     <p>Qty by Cartons</p>
                 </div>
                 <div class="pricing-carton">
-                    <div class="decrement-wrapper" (click)="decrementOperation('carton')">
+                    <div class="decrement-wrapper" (click)="decrementOperation(item,'carton')">
                         <div class="decrement-btn">
                             <fa-icon [icon]="['fas','minus']"></fa-icon>
                         </div>
                     </div>
                     <div class="cartons">
-                        <p>{{qty_cartons}}</p>
+                        <p>{{item.qty_cartons}}</p>
                     </div>
-                    <div class="increment-wrapper" (click)="incrementOperation('carton')">
+                    <div class="increment-wrapper" (click)="incrementOperation(item,'carton')">
                         <div class="increment-btn">
                             <fa-icon [icon]="['fas','plus']"></fa-icon>
                         </div>
                     </div>
                 </div>
+            </div>
+            <div class="pricing-product-wrapper" *ngIf="isProdTotalAvailable">
+                Sub total is : {{productTotal}}
             </div>
         </div>
         <div class="total-wrapper">

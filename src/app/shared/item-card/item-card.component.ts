@@ -30,7 +30,6 @@ export class ItemCardComponent implements OnInit {
     }
 
     this.cartService.cartList.subscribe(data => {
-      console.log(data.length);
       this.addToCartList = data;
       this.isCartEmpty = false
     });
@@ -46,7 +45,15 @@ export class ItemCardComponent implements OnInit {
    * @param item : selected product by user
    */
   public addToCart(item) {
-    this.addToCartList.push(item);
+    let newItem = {
+      prod_name: item.prod_name,
+      prod_desc: item.prod_desc,
+      carton_price: item.carton_price,
+      unit_price: item.unit_price,
+      qty_cartons: 0,
+      qty_units: 0
+    }
+    this.addToCartList.push(newItem);
     this.cartService.addProductsToCart(this.addToCartList);
   }
 }

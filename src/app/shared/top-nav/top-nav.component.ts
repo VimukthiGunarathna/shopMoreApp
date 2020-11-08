@@ -16,7 +16,6 @@ export class TopNavComponent implements OnInit {
   ngOnInit(): void {
     this.cartService.cartList.subscribe(data => {
       this.notifications = data.length;
-      console.log(this.notifications);
     });
   }
 
