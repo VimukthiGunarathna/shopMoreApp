@@ -19,15 +19,15 @@
                     <p>Qty by Units</p>
                 </div>
                 <div class="pricing-units">
-                    <div class="decrement-wrapper">
+                    <div class="decrement-wrapper" (click)="decrementOperation('unit')">
                         <div class="decrement-btn">
                             <fa-icon [icon]="['fas','minus']"></fa-icon>
                         </div>
                     </div>
                     <div class="units">
-                        <p>10</p>
+                        <p>{{qty_units}}</p>
                     </div>
-                    <div class="increment-wrapper">
+                    <div class="increment-wrapper" (click)="incrementOperation('unit')">
                         <div class="increment-btn">
                             <fa-icon [icon]="['fas','plus']"></fa-icon>
                         </div>
@@ -36,18 +36,18 @@
             </div>
             <div class="pricing-cartons-wrapper">
                 <div class="carton-header">
-                    <p>Qty by Units</p>
+                    <p>Qty by Cartons</p>
                 </div>
                 <div class="pricing-carton">
-                    <div class="decrement-wrapper">
+                    <div class="decrement-wrapper" (click)="decrementOperation('carton')">
                         <div class="decrement-btn">
                             <fa-icon [icon]="['fas','minus']"></fa-icon>
                         </div>
                     </div>
                     <div class="cartons">
-                        <p>10</p>
+                        <p>{{qty_cartons}}</p>
                     </div>
-                    <div class="increment-wrapper">
+                    <div class="increment-wrapper" (click)="incrementOperation('carton')">
                         <div class="increment-btn">
                             <fa-icon [icon]="['fas','plus']"></fa-icon>
                         </div>
@@ -69,15 +69,15 @@
                     <p>Qty by Units</p>
                 </div>
                 <div class="pricing-units">
-                    <div class="decrement-wrapper">
+                    <div class="decrement-wrapper" (click)="decrementOperation('unit')">
                         <div class="decrement-btn">
                             <fa-icon [icon]="['fas','minus']"></fa-icon>
                         </div>
                     </div>
                     <div class="units">
-                        <p>10</p>
+                        <p>{{qty_units}}</p>
                     </div>
-                    <div class="increment-wrapper">
+                    <div class="increment-wrapper" (click)="incrementOperation('unit')">
                         <div class="increment-btn">
                             <fa-icon [icon]="['fas','plus']"></fa-icon>
                         </div>
@@ -86,18 +86,18 @@
             </div>
             <div class="pricing-cartons-wrapper">
                 <div class="carton-header">
-                    <p>Qty by Units</p>
+                    <p>Qty by Cartons</p>
                 </div>
                 <div class="pricing-carton">
-                    <div class="decrement-wrapper">
+                    <div class="decrement-wrapper" (click)="decrementOperation('carton')">
                         <div class="decrement-btn">
                             <fa-icon [icon]="['fas','minus']"></fa-icon>
                         </div>
                     </div>
                     <div class="cartons">
-                        <p>10</p>
+                        <p>{{qty_cartons}}</p>
                     </div>
-                    <div class="increment-wrapper">
+                    <div class="increment-wrapper" (click)="incrementOperation('carton')">
                         <div class="increment-btn">
                             <fa-icon [icon]="['fas','plus']"></fa-icon>
                         </div>

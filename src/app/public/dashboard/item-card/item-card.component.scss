@@ -51,6 +51,12 @@
   }
 
   .addtocart-wrapper {
+    &:hover {
+      cursor: pointer;
+      background-color: #503fa8;
+      color: white;
+    }
+
     border-radius: 50%;
     width: 3em;
     height: 3em;

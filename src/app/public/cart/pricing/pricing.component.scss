@@ -53,6 +53,9 @@
   .pricing-btn {
     &:hover {
       cursor: pointer;
+      background-color: #503fa8;
+      font-size: 19px;
+      color: white;
     }
 
     background-color: #E7DDF2;
@@ -131,9 +134,18 @@
   align-items: center;
   background-color: #574A97;
 
+  &:hover {
+    cursor: pointer;
+    background-color: #503fa8;
+  }
+
   .increment-btn {
     font-size: 17px;
     color: white;
+
+    &:hover {
+      font-size: 20px;
+    }
   }
 }
 
@@ -147,9 +159,18 @@
   align-items: center;
   background-color: #574A97;
 
+  &:hover {
+    cursor: pointer;
+    background-color: #503fa8
+  }
+
   .decrement-btn {
     font-size: 17px;
     color: white;
+
+    &:hover {
+      font-size: 20px;
+    }
   }
 }
 
@@ -167,6 +188,9 @@
   .order-btn {
     &:hover {
       cursor: pointer;
+      background-color: #503fa8;
+      // font-size: 19px;
+      color: white;
     }
 
     margin-left: 42em;
