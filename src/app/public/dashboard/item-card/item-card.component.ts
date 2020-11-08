@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CartService } from 'src/app/services/cart.service';
 import { ProdManagementService } from 'src/app/services/prod-management.service';
 
@@ -12,9 +12,11 @@ import { prod_list } from '../seed';
 })
 export class ItemCardComponent implements OnInit {
 
+  @Input() type;
   public products = prod_list; // which holds all the products
   public cartList = [];
   public addToCartList = [];
+  public isCart = false;
 
   constructor(
     private prodManagementService: ProdManagementService,
@@ -22,8 +24,12 @@ export class ItemCardComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if (this.type == 'cart') {
+      this.isCart = true;
+    }
+
     this.cartService.cartList.subscribe(data => {
-      console.log(data);
+      this.cartList = data;
     });
 
     // Get all the availabe products
@@ -37,13 +43,7 @@ export class ItemCardComponent implements OnInit {
    * @param item : selected product by user
    */
   public addToCart(item) {
-    let me = {
-      prod_name: 'ss',
-      prod_desc: 'sdd',
-      carton_price: 'sd',
-      unit_price: 'sddds'
-    }
-    this.addToCartList.push(me);
+    this.addToCartList.push(item);
     this.cartService.addProductsToCart(this.addToCartList);
   }
 }

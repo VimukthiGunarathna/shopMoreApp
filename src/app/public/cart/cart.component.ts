@@ -9,6 +9,7 @@ import { CartService } from 'src/app/services/cart.service';
 export class CartComponent implements OnInit {
 
   public cartList: any;
+  public typeOfCard = 'cart'
 
   constructor(
     private cartService: CartService
