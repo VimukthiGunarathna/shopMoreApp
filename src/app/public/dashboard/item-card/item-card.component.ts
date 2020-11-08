@@ -29,7 +29,7 @@ export class ItemCardComponent implements OnInit {
     }
 
     this.cartService.cartList.subscribe(data => {
-      this.cartList = data;
+      this.addToCartList = data;
     });
 
     // Get all the availabe products
