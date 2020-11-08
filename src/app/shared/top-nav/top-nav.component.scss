@@ -20,18 +20,23 @@
 
 .user-cart {
   .cart {
-    &:hover{
+    &:hover {
       cursor: pointer;
       color: aqua;
     }
-    font-size: 29px;
+
+    i {
+      font-size: 33px;
+    }
+
     color: #413382;
     padding-left: 70px;
   }
 }
 
 .user-profile {
-    padding-left: 70px;
+  padding-left: 70px;
+
   .profile-img {
     width: 4em;
     height: 4em;

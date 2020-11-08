@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-top-nav',
@@ -7,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavComponent implements OnInit {
 
-  value = 'Clear me';
-  constructor() { }
+  public notifications; // notification counter
+  constructor(
+    private cartService: CartService
+  ) { }
 
   ngOnInit(): void {
+    this.cartService.cartList.subscribe(data => {
+      this.notifications = data.length;
+      console.log(this.notifications);
+    });
   }
 
 }
